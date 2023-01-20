@@ -1,0 +1,61 @@
+/* Define a general font style */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Set a background color for the page */
+body {
+  background-color: #f2f2f2;
+}
+
+/* Style the title of the page */
+h1 {
+  color: #4CAF50;
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Style the select element for the current user */
+select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  width: 200px;
+  margin-left: 10px;
+}
+
+/* Style the list of resources */
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Style the list items of resources */
+li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  width: 200px;
+}
+
+/* Style the images of resources */
+img {
+  width: 200px;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Style the iframe element for the video trailer */
+iframe {
+  border: none;
+  margin: 0 auto;
+  display: block;
+}
+
+This is just an example of how you can style the page and make it look nice, you can adjust and customize it as you want.

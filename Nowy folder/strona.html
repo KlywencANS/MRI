@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Streaming service</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Select User:</h1>
+  <p>Current User: <select id="select1"></select></p>
+  <ol id="json">
+  </ol>
+  <div id="div11">
+    <p id="x">One of video's trailer: </p>
+    <iframe width="500" height="400"
+src="https://www.youtube.com/embed/UaVTIH8mujA?autoplay=1&mute=1">
+</iframe>
+  </div>
+  <script>
+    const jsonData = `{
+    "resources": [
+        {
+            "type": "movie",
+            "year": "1994",
+            "title": "The Shawshank Redemption",
+            "artist": "Tim Robbins",
+            "rating": "8.8",
+            "genres": ["drama", " crime"]
+        },
+        {
+            "type": "movie",
+            "year": "1972",
+            "title": "The Godfather",
+            "artist": "Ford Coppoli",
+            "rating": "5.4",
+            "genres": ["crime", " drama"]
+        },
+        {
+            "type": "tv_series",
+            "year": "2008",
+            "title": "Breaking Bad",
+            "artist": "Vince Gilligan",
+            "rating": "9.2",
+            "genres": ["crime", " drama"]
+        },
+        {
+            "type": "music",
+            "year": "1930",
+            "title": "Thriller",
+            "artist": "Michael Jackson",
+            "rating": "7",
+            "genres": ["disco", " funk"]
+        },
+        {
+            "type": "music",
+            "year": "2021",
+            "title": "Just Breathing",
+            "artist": "Neffex",
+            "rating": "9.5",
+            "genres": "pop"
+        },
+        {
+            "type": "music",
+            "year": "1934",
+            "title": "Zombie",
+            "artist": "The Cranberries",
+            "rating": "10",
+            "genres": "rock"
+        }
+    ],
+    "users": [
+        {
+            "username": "jan",
+            "preferences": ["tv_series", "adventure"]
+        },
+        {
+            "username": "adrian2222",
+            "preferences": ["music"]
+        },
+        {
+            "username": "test31111",
+            "preferences": ["movie", "tv_series"]
+        }
+    ]
+}`;
+let Jdata = JSON.parse(jsonData);
+const select1 = document.getElementById("select1");
+
+    const json222 = document.getElementById("json");
+Jdata.users.forEach(function(user) {
+  let option = document.createElement("option");
+  option.value = user.username;
+  option.text = user.username;
+  select1.appendChild(option);
+});
+
+select1.addEventListener("change", function() {
+  let selectedUsername = this.value;
+  let selectedUser = Jdata.users.find(function(user) {
+    return user.username === selectedUsername;
+  });
+  let matchingResources = Jdata.resources.filter(function(resource) {
+    return selectedUser.preferences.includes(resource.type);
+  });
+  json222.innerHTML = "";
+    matchingResources.forEach(function(resource) {
+      let resourceLi = document.createElement("li");
+    let resourceImage = document.createElement("img");
+    resourceImage.src = "images/" + resource.title + ".jpg";
+    resourceImage.alt = resource.title;
+    resourceLi.appendChild(resourceImage);
+    resourceLi.appendChild(document.createTextNode(`Type: ${resource.type}, Title: ${resource.title}, Year: ${resource.year}, Artist: ${resource.artist}, Rating: ${resource.rating}, Genres: ${resource.genres}`));
+    json222.appendChild(resourceLi);
+  });
+});
+  </script>
+</body>
+</html>

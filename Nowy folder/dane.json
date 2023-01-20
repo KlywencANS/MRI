@@ -1,0 +1,66 @@
+{
+    "resources": [
+        {
+            "type": "movie",
+            "year": "1994",
+            "title": "The Shawshank Redemption",
+            "artist": "Tim Robbins",
+            "rating": "8.8",
+            "genres": ["drama", "crime"]
+        },
+        {
+            "type": "movie",
+            "year": "1972",
+            "title": "The Godfather",
+            "artist": "Ford Coppoli",
+            "rating": "5.4",
+            "genres": ["crime", "drama"]
+        },
+        {
+            "type": "tv_series",
+            "year": "2008",
+            "title": "Breaking Bad",
+            "artist": "Vince Gilligan",
+            "rating": "9.2",
+            "genres": ["crime", "drama"]
+        },
+        {
+            "type": "music",
+            "year": "1930",
+            "title": "Thriller",
+            "artist": "Michael Jackson",
+            "rating": "7",
+            "genres": ["disco", "funk"]
+        },
+        {
+            "type": "music",
+            "year": "2021",
+            "title": "Just Breathing",
+            "artist": "Neffex",
+            "rating": "9.5",
+            "genres": "pop"
+        },
+        {
+            "type": "music",
+            "year": "1934",
+            "title": "Zombie",
+            "artist": "The Cranberries",
+            "rating": "10",
+            "genres": "rock"
+        }
+    ],
+    "users": [
+        {
+            "username": "jan",
+            "preferences": ["tv_series", "adventure"]
+        },
+        {
+            "username": "adrian2222",
+            "preferences": ["music"]
+        },
+        {
+            "username": "test31111",
+            "preferences": ["movie", "tv_series"]
+        }
+    ]
+}

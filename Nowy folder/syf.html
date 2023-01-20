@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Resources and Users</title>
+    <style>
+        /* CSS styles for formatting the table */
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        /* CSS styles for displaying the user preferences */
+        .user-pref {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+<h1>Resources</h1>
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Year</th>
+        <th>Title</th>
+        <th>Artist</th>
+        <th>Rating</th>
+        <th>Genres</th>
+    </tr>
+    <script>
+        // Convert the JSON string to a JavaScript object
+        var data = JSON.parse('{ "resources": [ { "type": "movie", "year": "1994", "title": "The Shawshank Redemption", "artist": "Tim Robbins", "rating": "8.8", "genres": ["drama", "crime"] }, { "type": "movie", "year": "1972", "title": "The Godfather", "artist": "Ford Coppoli", "rating": "5.4", "genres": ["crime", "drama"] }, { "type": "tv_series", "year": "2008", "title": "Breaking Bad", "artist": "Vince Gilligan", "rating": "9.2", "genres": ["crime", "drama"] }, { "type": "music", "year": "1930", "title": "Thriller", "artist": "Michael Jackson", "rating": "7", "genres": ["disco", "funk"] }, { "type": "music", "year": "2021", "title": "Just Breathing", "artist": "Neffex", "rating": "9.5", "genres": "pop" }, { "type": "music", "year": "1934", "title": "Zombie", "artist": "The Cranberries", "rating": "10", "genres": "rock" } ], "users": [ { "username": "jan", "preferences": ["tv_series", "adventure"] }, { "username": "adrian2222", "preferences": ["music"] }, { "username": "test31111", "preferences": ["movie", "tv_series"] } ] }');
+        // Loop through the resources and create a table row for each
+        for (var i = 0; i < data.resources.length; i++) {
+            var resource = data.resources[i];
+            document.write('<tr>');
+            document.write('<td>' + resource.type + '</td>');
+            document.write('<td>' + resource.year + '</td>');
+            document.write('<td>'  +  resource.title + '</td>');
+            document.write('<td>' + resource.artist + '</td>');
+            document.write('<td>' + resource.rating + '</td>');
+            document.write('<td>' + resource.genres.join(', ') + '</td>');
+            document.write('</tr>');
+        }
+    </script>
+</table>
+<h1>Users</h1>
+<ul>
+    <script>
+        // Loop through the users and create a list item for each
+        for (var i = 0; i < data.users.length; i++) {
+            var user = data.users[i];
+            document.write('<li>' + user.username + ': <span class="user-pref">' + user.preferences.join(', ') + '</span></li>');
+        }
+    </script>
+</ul>
+
+</body>
+</html>
